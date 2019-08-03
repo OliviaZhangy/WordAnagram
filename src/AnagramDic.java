@@ -47,8 +47,14 @@ public class AnagramDic {
      *            the string which will be sorted
      * @return a string in alphabetical order
      */
-    private static String sortElement(String element) {
+   private static String sortElement(String element) {
         char[] arrElement = element.toCharArray();
+        for(int i=0;i<arrElement.length;i++){
+            //change all upper case to lower case
+            if(arrElement[i]>='A'&& arrElement[i]<='Z'){
+                arrElement[i] = (char)(arrElement[i]-'A'+'a');
+            }
+        }
         Arrays.sort(arrElement);
         return new String(arrElement);
     }
